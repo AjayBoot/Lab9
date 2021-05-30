@@ -66,7 +66,93 @@
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-    // TODO - Make buttons functional
+    
+    //Console Log Demo
+    errorBtns[0].addEventListener('click', () => {
+
+      console.log("Console Log Demo");
+    });
+
+    //Console Error Demo
+    errorBtns[1].addEventListener('click', () => {
+
+      console.error("Console Error Demo");
+    });
+
+    //Console Dir Demo
+    errorBtns[2].addEventListener('click', () => {
+
+      //Show JSON representation of this button
+      console.dir(errorBtns[2]);
+    });
+
+    //Console Dirxml 
+    errorBtns[3].addEventListener('click', () => {
+
+      console.dirxml(document.body);
+    });
+
+    //Console Gourp Start
+    errorBtns[4].addEventListener('click', () => {
+
+      console.group('Log Group');
+    });
+
+    //Console Group End
+    errorBtns[5].addEventListener('click', () => {
+
+      console.groupEnd('Log Group');
+    });
+
+    //Console Table
+    errorBtns[6].addEventListener('click', () => {
+
+      console.table([
+
+      {
+        name: "Software Engineering",
+        num: 110,
+      },
+
+      {
+        name: "Programming Languages",
+        num: 130,
+      },
+
+      {
+        name: "Advanced Software Engineering",
+        num: 112,
+      },
+    ]);
+    });
+    
+    //Start Timer
+    errorBtns[7].addEventListener('click', () => {
+
+      console.log("Timer Started!");
+      console.time('Run Time');
+    });
+
+    //End Timer
+    errorBtns[8].addEventListener('click', () => {
+
+      console.log("Timer Ended!");
+      console.timeEnd('Run Time');
+    });
+    
+    //Console Trace
+    errorBtns[9].addEventListener('click', () => {
+
+      const traceTest = () => {deep();};
+      const deep = () => {deeper();};
+      const deeper = () => {deepest();};
+      const deepest = () => {console.trace();};
+
+      traceTest();
+    });
+
+    //Trigger a Global Error
+    
   </script>
 </body>
 </html>
